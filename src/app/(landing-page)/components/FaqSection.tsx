@@ -63,7 +63,7 @@ const FaqSection = () => {
             {faqs.description}
           </p>
 
-          {/* ACTION BUTTONS (DESKTOP ONLY: UNTOUCHED) */}
+          {/* Actions (Desktop) */}
           <div className="mt-8 hidden lg:flex flex-wrap items-center gap-3">
             <Link
               href={contact.WhatsappCta}
@@ -126,8 +126,8 @@ const FaqSection = () => {
             );
           })}
 
-          {/* ACTION BUTTONS (MOBILE ONLY: COMES BELOW ACCORDION COMPONENT) */}
-          <div className="pt-4 flex lg:hidden flex-wrap items-center gap-3">
+          {/* Actions (Mobile) */}
+          <div className="pt-4 flex lg:hidden flex-wrap items-center justify-center gap-3">
             <Link
               href={contact.WhatsappCta}
               target="_blank"

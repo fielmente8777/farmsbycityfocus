@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { farmsData } from "./farmsData";
-import { FaWhatsapp } from "react-icons/fa";
 import { useWebContext } from "@/src/context-api/WebContext";
 import { contact } from "@/src/utils/constent";
 import { SectionWithContainer } from "@/src/components/sectionComponants";
+import { whatsappIcon } from "@/src/utils/icon";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -64,16 +64,16 @@ const ReviewsSection = () => {
           </h2>
         </div>
 
-        {/* TOP-RIGHT ACTIONS (DESKTOP ONLY: UNTOUCHED) */}
+        {/* Header Actions (Desktop) */}
         <div className="hidden md:flex items-center gap-3 shrink-0">
           <Link
             href={contact.WhatsappCta}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-11 h-11 rounded-full bg-white border border-[#DCCFB6] text-[#25D366] hover:bg-[#FAF7F0] transition flex items-center justify-center text-xl shadow-2xs shrink-0"
+            className="w-11 h-11 rounded-full bg-white border border-[#DCCFB6] hover:bg-[#FAF7F0] transition flex items-center justify-center shadow-2xs shrink-0"
             title="Chat on WhatsApp"
           >
-            <FaWhatsapp />
+            {whatsappIcon({ width: 22, height: 22 })}
           </Link>
 
           <button
@@ -86,7 +86,7 @@ const ReviewsSection = () => {
         </div>
       </div>
 
-      {/* MOBILE REVIEWS SLIDER */}
+      {/* Reviews Slider (Mobile) */}
       <div className="block md:hidden">
         <Swiper
           modules={[Autoplay, Pagination]}
@@ -95,9 +95,9 @@ const ReviewsSection = () => {
             disableOnInteraction: false,
           }}
           loop={true}
-          slidesPerView={1.08}
-          spaceBetween={14}
-          centeredSlides={false}
+          slidesPerView={1}
+          spaceBetween={20}
+          centeredSlides={true}
           pagination={{
             clickable: true,
           }}
@@ -156,7 +156,7 @@ const ReviewsSection = () => {
         </Swiper>
       </div>
 
-      {/* DESKTOP 3 REVIEW CARDS (100% UNTOUCHED) */}
+      {/* Review Cards (Desktop) */}
       <div className="hidden md:grid md:grid-cols-3 gap-5 sm:gap-6 items-start">
         {reviews.items.map((rev) => (
           <div
@@ -164,12 +164,12 @@ const ReviewsSection = () => {
             className="bg-white p-7 sm:p-8 rounded-2xl border border-[#E8DEC8] shadow-[0_2px_12px_rgba(58,36,6,0.03)] flex flex-col hover:shadow-md transition duration-300"
           >
             <div>
-              {/* 5 STARS (WARM GOLD) */}
+              {/* Star Rating */}
               <div className="flex items-center gap-1.5 text-[#C6A87D] text-[15px] tracking-[0.2em] mb-5">
                 {"★".repeat(rev.rating)}
               </div>
 
-              {/* QUOTE IN PLAYFAIR DISPLAY (NO QUOTATION MARKS) */}
+              {/* Quote */}
               <p
                 className="text-lg sm:text-[21px] text-[#3A2406] leading-[140%] font-normal"
                 style={{
@@ -181,7 +181,7 @@ const ReviewsSection = () => {
               </p>
             </div>
 
-            {/* AUTHOR */}
+            {/* Author */}
             <div className="mt-8 flex items-center gap-3.5">
               <div
                 className="w-10 h-10 rounded-full bg-[#211704] text-[#FFFDF6] flex items-center justify-center font-medium text-sm shrink-0"
@@ -211,16 +211,16 @@ const ReviewsSection = () => {
         ))}
       </div>
 
-      {/* BOTTOM ACTIONS (MOBILE ONLY: BELOW REVIEW CARDS) */}
+      {/* Actions (Mobile) */}
       <div className="mt-8 flex md:hidden items-center justify-center gap-3">
         <Link
           href={contact.WhatsappCta}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-11 h-11 rounded-full bg-white border border-[#DCCFB6] text-[#25D366] hover:bg-[#FAF7F0] transition flex items-center justify-center text-xl shadow-2xs shrink-0"
+          className="w-11 h-11 rounded-full bg-white border border-[#DCCFB6] hover:bg-[#FAF7F0] transition flex items-center justify-center shadow-2xs shrink-0"
           title="Chat on WhatsApp"
         >
-          <FaWhatsapp />
+          {whatsappIcon({ width: 22, height: 22 })}
         </Link>
 
         <button

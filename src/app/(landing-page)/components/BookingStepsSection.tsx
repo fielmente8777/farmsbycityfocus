@@ -62,22 +62,26 @@ const BookingStepsSection = () => {
 
           {/* HEADLINE IN PLAYFAIR DISPLAY */}
           <h2
-            className="text-3xl sm:text-4xl lg:text-[52px] text-[#FFFDF6] leading-[108%]"
+            className="text-[25px] xs:text-[27px] sm:text-4xl lg:text-[52px] text-[#FFFDF6] leading-[115%] sm:leading-[108%]"
             style={{
               fontFamily: "'Playfair Display', var(--font-playfair), serif",
               fontWeight: 500,
-              lineHeight: "108%",
               letterSpacing: "0%",
             }}
           >
-            <span>From enquiry to poolside </span>
-            <span className="italic font-medium">in</span>
-            <span className="block italic font-medium">three steps.</span>
+            {/* Mobile Headline */}
+            <span className="sm:hidden block">From enquiry to poolside</span>
+            <span className="sm:hidden block italic font-medium mt-1">in three steps.</span>
+
+            {/* Desktop Headline */}
+            <span className="hidden sm:inline">From enquiry to poolside </span>
+            <span className="hidden sm:inline italic font-medium">in</span>
+            <span className="hidden sm:block italic font-medium">three steps.</span>
           </h2>
         </div>
 
-        {/* TOP-RIGHT ACTIONS */}
-        <div className="flex items-center gap-3 shrink-0">
+        {/* Desktop Header Actions */}
+        <div className="hidden md:flex items-center gap-3 shrink-0">
           <Link
             href={contact.WhatsappCta}
             target="_blank"
@@ -103,11 +107,11 @@ const BookingStepsSection = () => {
         {bookingSteps.steps.map((step) => (
           <div
             key={step.number}
-            className="p-6 sm:p-8 rounded-2xl bg-white/[0.04] border border-[#EBD9B4]/20 flex flex-col justify-between hover:bg-white/[0.07] transition duration-300 min-h-[220px]"
+            className="p-5 sm:p-8 rounded-2xl bg-white/[0.04] border border-[#EBD9B4]/20 flex flex-col justify-start sm:justify-between hover:bg-white/[0.07] transition duration-300 min-h-0 sm:min-h-[220px]"
           >
             {/* STEP NUMBER */}
             <div
-              className="text-3xl sm:text-[38px] text-[#EBD9B4] mb-6 font-medium leading-none"
+              className="text-3xl sm:text-[38px] text-[#EBD9B4] mb-3 sm:mb-6 font-medium leading-none"
               style={{
                 fontFamily: "'Playfair Display', var(--font-playfair), serif",
                 fontWeight: 500,
@@ -139,6 +143,27 @@ const BookingStepsSection = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Mobile Actions */}
+      <div className="mt-8 flex md:hidden items-center justify-center gap-3">
+        <Link
+          href={contact.WhatsappCta}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 rounded-full bg-transparent border border-[#EBD9B4]/60 hover:bg-white/10 transition flex items-center justify-center shrink-0"
+          title="Chat on WhatsApp"
+        >
+          <WhatsAppIcon />
+        </Link>
+
+        <button
+          onClick={handleBookNow}
+          className="h-12 bg-[#FFFDF6] hover:bg-[#F6F0E2] text-[#3A2406] px-7 rounded-full text-[15px] font-medium transition flex items-center gap-2 shadow-sm hover:shadow cursor-pointer font-[family-name:var(--font-jost)]"
+        >
+          <span>Book Now</span>
+          <span>→</span>
+        </button>
       </div>
     </SectionWithContainer>
   );

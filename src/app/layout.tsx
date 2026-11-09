@@ -75,9 +75,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         suppressHydrationWarning={true}
       >
         <WebProvider>
-          <LandingNavbar />
-          {children}
-          <LandingFooter />
+          <div className="max_screen_width bg-[#FFFDF6] min-h-screen relative shadow-[0_0_50px_rgba(58,36,6,0.08)]">
+            <LandingNavbar />
+            {children}
+            <LandingFooter />
+          </div>
           <PopUpForm />
           <Call callNumber={contact.phone[0]} />
           <Whatsapp whatsAppNumber={contact.phone[0]} />

@@ -23,7 +23,7 @@ const ImageCard = ({
     />
     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
 
-    {/* WHITE PILL BADGE */}
+    {/* Badge */}
     <div className="absolute bottom-3 left-3 sm:bottom-3.5 sm:left-3.5">
       <span
         className="bg-white/95 text-[#3A2406] text-[10px] sm:text-[11px] font-medium tracking-[0.12em] uppercase px-3 py-1 rounded-full shadow-2xs border border-white/50 backdrop-blur-[2px] block"
@@ -46,7 +46,7 @@ const GallerySection = () => {
     return item.category === activeTab;
   });
 
-  // Specific items mapped for the exact Figma 7-image mosaic
+  // Map gallery items for featured mosaic layout
   const sukoonPool = gallery.items.find((i) => i.id === "2") || gallery.items[1];
   const crystalPool = gallery.items.find((i) => i.id === "1") || gallery.items[0];
   const crystalBonfire = gallery.items.find((i) => i.id === "3") || gallery.items[2];
@@ -61,10 +61,10 @@ const GallerySection = () => {
       sectionClassName="w-full bg-[#FFFDF6] py-16 sm:py-24"
       containerClassName=""
     >
-      {/* HEADER & FILTER TABS */}
+      {/* Header & Filter Tabs */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-8 sm:mb-10">
         <div>
-          {/* TAG */}
+          {/* Tag */}
           <span
             className="block uppercase text-[#8A6A3A] font-medium mb-3"
             style={{
@@ -80,7 +80,7 @@ const GallerySection = () => {
             {gallery.tag}
           </span>
 
-          {/* TITLE */}
+          {/* Title */}
           <h2
             className="text-3xl sm:text-4xl md:text-[52px] text-[#3A2406] leading-[108%]"
             style={{
@@ -93,7 +93,7 @@ const GallerySection = () => {
           </h2>
         </div>
 
-        {/* FILTER TABS */}
+        {/* Filter Tabs */}
         <div className="flex items-center gap-1 bg-[#FAF7F0] p-1 rounded-full border border-[#DCCFB6] w-fit">
           {(["all", "crystal", "sukoon"] as const).map((tab) => (
             <button
@@ -112,17 +112,17 @@ const GallerySection = () => {
         </div>
       </div>
 
-      {/* PHOTO GRID */}
+      {/* Photo Grid */}
       {activeTab === "all" ? (
         <div className="space-y-3.5 sm:space-y-4">
-          {/* ROW 1: 5 cols + 4 cols (stacked) + 3 cols = 12 cols */}
+          {/* Row 1 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3.5 sm:gap-4 lg:h-[440px]">
-            {/* LEFT: SUKOON POOL (Large Landscape) */}
+            {/* Sukoon Pool */}
             <div className="lg:col-span-5 h-[260px] sm:h-[320px] lg:h-full">
               <ImageCard item={sukoonPool} className="w-full h-full" />
             </div>
 
-            {/* MIDDLE: 2 STACKED IMAGES */}
+            {/* Stacked Feature Images */}
             <div className="lg:col-span-4 flex flex-col gap-3.5 sm:gap-4 h-[320px] lg:h-full">
               <div className="flex-1 min-h-0">
                 <ImageCard item={crystalPool} className="w-full h-full" />
@@ -132,32 +132,32 @@ const GallerySection = () => {
               </div>
             </div>
 
-            {/* RIGHT: SUKOON GAZEBO (Tall Vertical) */}
+            {/* Sukoon Gazebo */}
             <div className="md:col-span-2 lg:col-span-3 h-[280px] sm:h-[320px] lg:h-full">
               <ImageCard item={sukoonGazebo} className="w-full h-full" />
             </div>
           </div>
 
-          {/* ROW 2: 3 cols + 6 cols (Wide) + 3 cols = 12 cols */}
+          {/* Row 2 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3.5 sm:gap-4 lg:h-[230px]">
-            {/* LEFT: SUKOON GAMES */}
+            {/* Sukoon Games */}
             <div className="lg:col-span-3 h-[200px] sm:h-[220px] lg:h-full">
               <ImageCard item={sukoonGames} className="w-full h-full" />
             </div>
 
-            {/* MIDDLE: SUKOON LIVING (Wide Landscape) */}
+            {/* Sukoon Living */}
             <div className="sm:col-span-2 lg:col-span-6 h-[220px] sm:h-[240px] lg:h-full">
               <ImageCard item={sukoonLiving} className="w-full h-full" />
             </div>
 
-            {/* RIGHT: CRYSTAL CABANA */}
+            {/* Crystal Cabana */}
             <div className="lg:col-span-3 h-[200px] sm:h-[220px] lg:h-full">
               <ImageCard item={crystalCabana} className="w-full h-full" />
             </div>
           </div>
         </div>
       ) : (
-        /* FILTERED VIEW: CLEAN GRID */
+        /* Filtered View */
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
           {filteredItems.map((item) => (
             <div key={item.id} className="aspect-[4/3]">

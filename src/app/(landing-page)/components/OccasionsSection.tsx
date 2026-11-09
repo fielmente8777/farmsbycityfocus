@@ -3,10 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { farmsData } from "./farmsData";
-import { FaWhatsapp } from "react-icons/fa";
 import { useWebContext } from "@/src/context-api/WebContext";
 import { contact } from "@/src/utils/constent";
 import { SectionWithContainer } from "@/src/components/sectionComponants";
+import { whatsappIcon } from "@/src/utils/icon";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -15,10 +15,11 @@ import "swiper/css/pagination";
 const LeafIcon = () => (
   <div className="flex justify-center mb-4">
     <Image
-      src="/images/farms/leaf-icon.png"
-      alt="Leaf Icon"
+      src="/occassion-leaf.png"
+      alt="Occasion Leaf"
       width={34}
       height={46}
+      priority
       className="w-[34px] h-[46px] object-contain"
     />
   </div>
@@ -43,10 +44,10 @@ const OccasionsSection = () => {
       sectionClassName="w-full bg-[#F6F0E2] py-16 sm:py-24"
       containerClassName="text-center"
     >
-      {/* LEAF ICON */}
+      {/* Leaf Icon */}
       <LeafIcon />
 
-      {/* TAG */}
+      {/* Tag */}
       <span
         className="block uppercase text-[#8A6A3A] font-medium mb-3"
         style={{
@@ -62,7 +63,7 @@ const OccasionsSection = () => {
         {occasions.tag}
       </span>
 
-      {/* HEADING */}
+      {/* Heading */}
       <h2
         className="text-3xl sm:text-4xl md:text-[52px] text-[#3A2406] text-center mx-auto"
         style={{
@@ -78,7 +79,7 @@ const OccasionsSection = () => {
         <span className="block italic">reasons to gather.</span>
       </h2>
 
-      {/* MOBILE AUTOSLIDE SLIDER (SQUARE SHAPE) */}
+      {/* Mobile Slider */}
       <div className="mt-8 block sm:hidden">
         <Swiper
           modules={[Autoplay, Pagination]}
@@ -103,10 +104,10 @@ const OccasionsSection = () => {
                   fill
                   className="object-cover"
                 />
-                {/* GRADIENT OVERLAY */}
+                {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#3A2406]/95 via-[#3A2406]/40 to-transparent" />
 
-                {/* TEXT CONTENT */}
+                {/* Content */}
                 <div className="absolute inset-x-0 bottom-0 p-5 text-white">
                   <h3
                     className="text-xl font-medium text-[#FFFDF6]"
@@ -135,7 +136,7 @@ const OccasionsSection = () => {
         </Swiper>
       </div>
 
-      {/* DESKTOP 6 OCCASIONS GRID (3x2) - 100% UNTOUCHED */}
+      {/* Desktop Grid */}
       <div className="mt-12 sm:mt-16 hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
         {occasions.items.map((item) => (
           <div
@@ -148,10 +149,10 @@ const OccasionsSection = () => {
               fill
               className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
             />
-            {/* GRADIENT OVERLAY */}
+            {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#3A2406]/95 via-[#3A2406]/40 to-transparent" />
 
-            {/* TEXT CONTENT */}
+            {/* Content */}
             <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 text-white">
               <h3
                 className="text-xl sm:text-[28px] font-medium text-[#FFFDF6]"
@@ -182,16 +183,16 @@ const OccasionsSection = () => {
         ))}
       </div>
 
-      {/* BOTTOM CTA */}
+      {/* Call to Action */}
       <div className="mt-12 flex items-center justify-center gap-3">
         <Link
           href={contact.WhatsappCta}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-11 h-11 rounded-full bg-white border border-[#DCCFB6] text-[#25D366] hover:bg-[#FAF7F0] transition flex items-center justify-center text-xl shadow-2xs"
+          className="w-11 h-11 rounded-full bg-white border border-[#DCCFB6] hover:bg-[#FAF7F0] transition flex items-center justify-center shadow-2xs"
           title="Chat on WhatsApp"
         >
-          <FaWhatsapp />
+          {whatsappIcon({ width: 22, height: 22 })}
         </Link>
 
         <button

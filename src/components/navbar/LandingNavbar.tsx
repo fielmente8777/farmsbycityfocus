@@ -30,7 +30,7 @@ const LandingNavbar = () => {
     <header className="w-full bg-[#FFFDF6] border-b border-[#F6F0E2] sticky top-0 z-40 transition-all duration-300">
       <Container>
         <div className="h-16 sm:h-20 flex items-center justify-between">
-          {/* LOGO */}
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <div className="relative h-12 w-36 sm:h-14 sm:w-40">
               <Image
@@ -43,8 +43,7 @@ const LandingNavbar = () => {
             </div>
           </Link>
 
-          {/* RIGHT CONTROLS */}
-          {/* MOBILE ONLY: CIRCULAR CALL BUTTON */}
+          {/* Mobile Actions */}
           <div className="flex sm:hidden items-center">
             <Link
               href={contact.callCta}
@@ -55,9 +54,9 @@ const LandingNavbar = () => {
             </Link>
           </div>
 
-          {/* DESKTOP ONLY CONTROLS (UNTOUCHED) */}
+          {/* Desktop Actions */}
           <div className="hidden sm:flex items-center gap-3 sm:gap-4">
-            {/* PHONE WITH PILL BADGE */}
+            {/* Phone Button */}
             <Link
               href={contact.callCta}
               className="flex items-center gap-2 text-xs sm:text-sm text-[#3A2406] transition tracking-wide"
@@ -68,7 +67,7 @@ const LandingNavbar = () => {
               </span>
             </Link>
 
-            {/* BOOK NOW PILL BUTTON */}
+            {/* Book Now Button */}
             <button
               onClick={handleBookNow}
               className="bg-[#3A2406] hover:bg-[#211704] text-[#FFFDF6] px-5 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide shadow-sm hover:shadow transition cursor-pointer"

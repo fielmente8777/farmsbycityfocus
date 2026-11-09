@@ -5,6 +5,7 @@ import Link from "next/link";
 import { farmsData } from "./farmsData";
 import { useWebContext } from "@/src/context-api/WebContext";
 import { contact } from "@/src/utils/constent";
+import { Container } from "@/src/components/sectionComponants";
 
 const WhatsAppIcon = () => (
   <svg
@@ -49,7 +50,7 @@ const FinalCtaSection = () => {
 
   return (
     <section className="relative w-full min-h-[540px] sm:min-h-[580px] lg:min-h-[620px] flex items-center justify-center overflow-hidden text-center text-[#FFFDF6] py-20 sm:py-28">
-      {/* FULL-BLEED BACKGROUND IMAGE WITH VIBRANT BLUE POOL */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src={finalCta.bgImage}
@@ -58,59 +59,77 @@ const FinalCtaSection = () => {
           priority
           className="object-cover object-center"
         />
-        {/* VIGNETTE GRADIENTS (LETS CYAN POOL GLOW THROUGH) */}
+        {/* Vignette Gradients */}
         <div className="absolute inset-0 bg-black/45" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/60" />
       </div>
 
-      {/* INNER CONTENT */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
-        {/* LEAF ICON */}
-        <LeafIcon />
+      {/* Content */}
+      <Container className="fade-up relative z-10 text-center">
+        <div className="max-w-4xl mx-auto">
+          {/* Leaf Icon */}
+          <LeafIcon />
 
-        {/* HEADLINE IN PLAYFAIR DISPLAY */}
-        <h2
-          className="text-3xl sm:text-5xl md:text-[54px] lg:text-[60px] text-[#FFFDF6] tracking-[-0.01em] leading-[108%] font-medium"
-          style={{
-            fontFamily: "'Playfair Display', var(--font-playfair), serif",
-            fontWeight: 500,
-          }}
-        >
-          <span>Your people. Your pool. </span>
-          <span className="italic">Your</span>
-          <span className="block italic">weekend.</span>
-        </h2>
-
-        {/* SUBTITLE */}
-        <p
-          className="mt-4 sm:mt-5 text-[15px] sm:text-[17px] text-[#E2D6C1] leading-[160%] max-w-xl mx-auto"
-          style={{ fontFamily: "var(--font-jost), sans-serif", fontWeight: 400 }}
-        >
-          Planning around winter weekends or New Year&apos;s Eve? Enquire early
-          <span className="block sm:inline"> to lock in your date.</span>
-        </p>
-
-        {/* ACTIONS */}
-        <div className="mt-8 sm:mt-10 flex items-center justify-center gap-3">
-          <Link
-            href={contact.WhatsappCta}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-12 h-12 rounded-full bg-transparent border border-[#EBD9B4]/60 hover:bg-white/10 transition flex items-center justify-center shrink-0"
-            title="Chat on WhatsApp"
+          {/* Headline */}
+          <h2
+            className="text-3xl sm:text-5xl md:text-[54px] lg:text-[60px] text-[#FFFDF6] tracking-[-0.01em] leading-[115%] sm:leading-[108%] font-medium"
+            style={{
+              fontFamily: "'Playfair Display', var(--font-playfair), serif",
+              fontWeight: 500,
+            }}
           >
-            <WhatsAppIcon />
-          </Link>
+            {/* Mobile Headline */}
+            <span className="sm:hidden block">Your people. Your pool.</span>
+            <span className="sm:hidden block italic mt-1">Your weekend.</span>
 
-          <button
-            onClick={handleBookNow}
-            className="h-12 bg-[#FFFDF6] hover:bg-[#F6F0E2] text-[#3A2406] px-8 rounded-full text-[15px] font-medium transition flex items-center justify-center gap-2 shadow-lg hover:shadow-xl cursor-pointer font-[family-name:var(--font-jost)]"
+            {/* Desktop Headline */}
+            <span className="hidden sm:inline">Your people. Your pool. </span>
+            <span className="hidden sm:inline italic">Your</span>
+            <span className="hidden sm:block italic">weekend.</span>
+          </h2>
+
+          {/* Subtitle */}
+          <p
+            className="mt-4 sm:mt-5 text-[14px] sm:text-[17px] text-[#E2D6C1] leading-[150%] sm:leading-[160%] max-w-xl mx-auto"
+            style={{ fontFamily: "var(--font-jost), sans-serif", fontWeight: 400 }}
           >
-            <span>Book Now</span>
-            <span>→</span>
-          </button>
+            {/* Mobile Subtitle */}
+            <span className="sm:hidden block">
+              Planning around winter weekends or New Year&apos;s Eve?
+            </span>
+            <span className="sm:hidden block">
+              Enquire early to lock in your date.
+            </span>
+
+            {/* Desktop Subtitle */}
+            <span className="hidden sm:inline">
+              Planning around winter weekends or New Year&apos;s Eve? Enquire early
+              <span className="block sm:inline"> to lock in your date.</span>
+            </span>
+          </p>
+
+          {/* Actions */}
+          <div className="mt-8 sm:mt-10 flex items-center justify-center gap-3">
+            <Link
+              href={contact.WhatsappCta}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 rounded-full bg-transparent border border-[#EBD9B4]/60 hover:bg-white/10 transition flex items-center justify-center shrink-0"
+              title="Chat on WhatsApp"
+            >
+              <WhatsAppIcon />
+            </Link>
+
+            <button
+              onClick={handleBookNow}
+              className="h-12 bg-[#FFFDF6] hover:bg-[#F6F0E2] text-[#3A2406] px-8 rounded-full text-[15px] font-medium transition flex items-center justify-center gap-2 shadow-lg hover:shadow-xl cursor-pointer font-[family-name:var(--font-jost)]"
+            >
+              <span>Book Now</span>
+              <span>→</span>
+            </button>
+          </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

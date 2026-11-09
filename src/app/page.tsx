@@ -9,10 +9,14 @@ import BookingStepsSection from "./(landing-page)/components/BookingStepsSection
 import ReviewsSection from "./(landing-page)/components/ReviewsSection";
 import FaqSection from "./(landing-page)/components/FaqSection";
 import FinalCtaSection from "./(landing-page)/components/FinalCtaSection";
+import ScrollReveal from "@/src/components/common/ScrollReveal";
 
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-[#FFFDF6] text-[#3A2406] font-sans antialiased overflow-x-hidden">
+      {/* Scroll Reveal Animation Manager */}
+      <ScrollReveal />
+
       {/* 1. HERO WITH LUXURY BOOKING BAR */}
       <HeroSection />
 

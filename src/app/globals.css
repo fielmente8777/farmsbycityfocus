@@ -35,3 +35,56 @@ body {
   color: #3A2406;
   font-family: var(--font-dm-sans), sans-serif;
 }
+
+.max_screen_width {
+  max-width: 1600px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+  display: block;
+}
+
+/* Professional Luxury Fade-Up Animation */
+.fade-up {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.fade-up.delay-100 {
+  transition-delay: 100ms;
+}
+
+.fade-up.delay-150 {
+  transition-delay: 150ms;
+}
+
+.fade-up.delay-200 {
+  transition-delay: 200ms;
+}
+
+.fade-up.delay-300 {
+  transition-delay: 300ms;
+}
+
+.fade-up.delay-400 {
+  transition-delay: 400ms;
+}
+
+@media (prefers-reduced-motion: reduce), print {
+  .fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

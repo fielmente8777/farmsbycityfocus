@@ -38,7 +38,7 @@ const SectionWithContainer: React.FC<SectionWithContainerProps> = ({
     >
       <Container
         id={containerId}
-        className={containerClassName}
+        className={`fade-up ${containerClassName}`.trim()}
         style={containerStyle}
         {...containerProps}
       >
