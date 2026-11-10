@@ -19,7 +19,7 @@ const HeroSection = () => {
   return (
     <div className="w-full">
       {/* Hero Image Banner */}
-      <section className="relative w-full pt-24 pb-20 xs:pt-28 xs:pb-24 min-h-[500px] xs:min-h-[520px] sm:min-h-0 sm:py-0 sm:h-[780px] flex flex-col justify-end sm:justify-center items-center overflow-hidden">
+      <section className="relative w-full pt-14 pb-26 xs:pt-16 xs:pb-28 sm:py-0 min-h-[520px] xs:min-h-[540px] sm:min-h-0 sm:h-[780px] flex flex-col justify-center items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -35,11 +35,11 @@ const HeroSection = () => {
         </div>
 
         {/* Hero Content */}
-        <Container className="fade-up relative z-10 text-left sm:text-center">
-          <div className="w-full mx-0 sm:mx-auto">
+        <Container className="fade-up relative z-10 text-center">
+          <div className="w-full mx-auto">
             {/* Subtitle */}
             <p
-              className="text-[11px] sm:text-[13px] tracking-[0.14em] sm:tracking-[0.25em] text-[#EBD9B4] uppercase font-medium mb-3 sm:mb-5 whitespace-nowrap sm:whitespace-normal max-w-none sm:mx-auto"
+              className="text-[11px] sm:text-[13px] tracking-[0.14em] sm:tracking-[0.25em] text-[#EBD9B4] uppercase font-medium mb-3 sm:mb-5 whitespace-nowrap sm:whitespace-normal max-w-none mx-auto text-center"
               style={{ fontFamily: "var(--font-jost), sans-serif", fontWeight: 500 }}
             >
               <span className="sm:hidden">PRIVATE FARMHOUSES · GURGAON & SOHNA</span>
@@ -50,15 +50,15 @@ const HeroSection = () => {
 
             {/* Headline (Mobile) */}
             <h1
-              className="sm:hidden text-[26px] xs:text-[28px] text-[#FFFDF6] tracking-[-0.01em] leading-[115%] font-medium text-left"
+              className="sm:hidden text-[26px] xs:text-[28px] text-[#FFFDF6] tracking-[-0.01em] leading-[115%] font-medium text-center"
               style={{
                 fontFamily: "'Playfair Display', var(--font-playfair), serif",
                 fontWeight: 500,
               }}
             >
-              <span className="block">Private farmhouses</span>
+              <span className="block">Private farmhouses in</span>
               <span className="block">
-                <span>in Gurugram, </span>
+                <span>Gurugram, </span>
                 <span
                   className="italic text-[#EBD9B4]"
                   style={{
@@ -122,7 +122,7 @@ const HeroSection = () => {
             </p>
 
             {/* Feature Pills */}
-            <div className="mt-4 sm:mt-7 flex flex-wrap items-center justify-start sm:justify-center gap-1.5 xs:gap-2 sm:gap-3 max-w-[350px] sm:max-w-none mx-0 sm:mx-auto">
+            <div className="mt-4 sm:mt-7 flex flex-wrap items-center justify-center gap-1.5 xs:gap-2 sm:gap-3 max-w-[360px] sm:max-w-none mx-auto">
               {hero.pills.map((pill, idx) => (
                 <span
                   key={pill}
