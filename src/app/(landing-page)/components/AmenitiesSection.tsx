@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { farmsData } from "./farmsData";
+import { farmsData } from "./pagedata";
 import { useWebContext } from "@/src/context-api/WebContext";
 import { contact } from "@/src/utils/constent";
 import { SectionWithContainer } from "@/src/components/sectionComponants";
@@ -36,12 +36,7 @@ const AmenitiesSection = () => {
   const { setIsOpenFormPopUp } = useWebContext();
 
   const handleBookNow = () => {
-    const formElem = document.getElementById("booking-form");
-    if (formElem) {
-      formElem.scrollIntoView({ behavior: "smooth" });
-    } else {
-      setIsOpenFormPopUp(true);
-    }
+    setIsOpenFormPopUp(true);
   };
 
   return (

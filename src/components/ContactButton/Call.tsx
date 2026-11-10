@@ -7,12 +7,12 @@ import { IoCall } from "react-icons/io5";
 function Call({ callNumber }: { callNumber: string }) {
   const pathName = usePathname();
   
-    if (pathName === "/thank-you/") {
-      return null;
-    }
+  if (pathName?.startsWith("/thank-you")) {
+    return null;
+  }
   return (
     <div
-      className={`fixed bottom-10 lg:left-3  left-4 z-20 cursor-pointer`}
+      className="fixed bottom-6 sm:bottom-8 left-4 lg:left-6 z-20 cursor-pointer"
     >
       <Link
         href={`tel:${callNumber ? callNumber.replace(/\s+/g, "") : "+91xxxxxxxxxx"}`}

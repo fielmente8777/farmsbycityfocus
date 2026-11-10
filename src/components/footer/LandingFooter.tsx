@@ -10,7 +10,7 @@ import { AddressIcon, PhoneIcon, MailIcon } from "@/src/utils/icon";
 const LandingFooter = () => {
   const pathName = usePathname();
 
-  if (pathName === "/thank-you/") {
+  if (pathName?.startsWith("/thank-you")) {
     return null;
   }
 

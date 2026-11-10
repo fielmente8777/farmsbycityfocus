@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { farmsData, FarmhouseCard } from "./farmsData";
+import { farmsData, FarmhouseCard } from "./pagedata";
 import { FiCheck } from "react-icons/fi";
 import { useWebContext } from "@/src/context-api/WebContext";
 import { SectionWithContainer } from "@/src/components/sectionComponants";
@@ -14,12 +14,7 @@ const FarmhouseCardItem = ({ card }: { card: FarmhouseCard }) => {
   const { setIsOpenFormPopUp } = useWebContext();
 
   const handleBookNow = () => {
-    const formElem = document.getElementById("booking-form");
-    if (formElem) {
-      formElem.scrollIntoView({ behavior: "smooth" });
-    } else {
-      setIsOpenFormPopUp(true);
-    }
+    setIsOpenFormPopUp(true);
   };
 
   const whatsappMessage = encodeURIComponent(

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { farmsData } from "./farmsData";
+import { farmsData } from "./pagedata";
 import { FaWhatsapp } from "react-icons/fa";
 import { FiChevronDown } from "react-icons/fi";
 import { contact } from "@/src/utils/constent";

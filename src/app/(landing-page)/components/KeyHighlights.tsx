@@ -1,6 +1,6 @@
 "use client";
 
-import { farmsData } from "./farmsData";
+import { farmsData } from "./pagedata";
 import { SectionWithContainer } from "@/src/components/sectionComponants";
 import { guestIcon, poolIcon, bedIcon, farmIcon } from "@/src/utils/icon";
 

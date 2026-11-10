@@ -8,17 +8,16 @@ import { getDateInputLimits } from "@/src/hooks/getDateInputLimits";
 import { IoIosArrowDown } from "react-icons/io";
 import { FiCalendar } from "react-icons/fi";
 import { countries } from "@/src/utils/constent";
+import { useWebContext } from "@/src/context-api/WebContext";
 
 interface BookingFormProps {
   isModal?: boolean;
 }
 
 const guestOptions = [
-  "21 - 30",
   "10 - 20",
-  "20 - 25",
-  "25+ guests",
-  "Help me choose",
+  "21 - 30",
+  "30+ guests",
 ];
 
 const occasionOptions = [
@@ -38,6 +37,7 @@ const farmhouseOptions = [
 ];
 
 const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
+  const { setIsOpenFormPopUp } = useWebContext();
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
 
@@ -54,6 +54,9 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
     onSubmitSuccess: () => {
       setStartDate(null);
       setEndDate(null);
+      if (isModal) {
+        setIsOpenFormPopUp(false);
+      }
     },
   });
 
@@ -83,7 +86,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
         onSubmit={handleSubmit}
         className={
           isModal
-            ? "bg-white rounded-2xl shadow-[0_4px_24px_rgba(58,36,6,0.06)] border border-[#E8DEC8] p-5"
+            ? "w-full"
             : "w-full bg-[#FFFDF6] sm:bg-transparent rounded-[28px] sm:rounded-none p-5 sm:p-0 shadow-[0_-8px_25px_rgba(0,0,0,0.16),0_20px_40px_rgba(0,0,0,0.18)] sm:shadow-none border border-[#EBE2D0] sm:border-none relative z-30"
         }
       >
@@ -111,13 +114,13 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
         <div
           className={`grid ${
             isModal
-              ? "grid-cols-1 gap-4"
+              ? "grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 items-end"
               : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.1fr_1.3fr_1.25fr_0.9fr_1.35fr_1.35fr_1.15fr] gap-3 sm:gap-3.5 items-end"
           }`}
         >
           {/* Name Field */}
-          <div className="flex flex-col gap-1.5 text-left">
-            <label className="text-[11px] uppercase tracking-[0.16em] text-[#7A6B56] font-medium font-[family-name:var(--font-jost)]">
+          <div className="flex flex-col gap-1 text-left">
+            <label className="text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#7A6B56] font-medium font-[family-name:var(--font-jost)]">
               YOUR NAME
             </label>
             <input
@@ -127,7 +130,9 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
               onChange={handleChange}
               placeholder="Full name"
               required
-              className="w-full bg-white border border-[#DCCFB6] focus:border-[#3A2406] rounded-xl px-3.5 py-2.5 text-sm text-[#3A2406] placeholder:text-[#9C8E7B] focus:outline-none transition h-[48px]"
+              className={`w-full bg-white border border-[#DCCFB6] focus:border-[#3A2406] rounded-xl text-sm text-[#3A2406] placeholder:text-[#9C8E7B] focus:outline-none transition ${
+                isModal ? "h-[42px] px-3 py-2" : "h-[48px] px-3.5 py-2.5"
+              }`}
             />
             {errors.name && (
               <span className="text-red-500 text-[10px]">{errors.name}</span>
@@ -135,11 +140,15 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
           </div>
 
           {/* Mobile Number Field */}
-          <div className="flex flex-col gap-1.5 text-left">
-            <label className="text-[11px] uppercase tracking-[0.16em] text-[#7A6B56] font-medium font-[family-name:var(--font-jost)]">
+          <div className="flex flex-col gap-1 text-left">
+            <label className="text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#7A6B56] font-medium font-[family-name:var(--font-jost)]">
               MOBILE NUMBER
             </label>
-            <div className="flex items-center bg-white border border-[#DCCFB6] focus-within:border-[#3A2406] rounded-xl overflow-hidden transition h-[48px]">
+            <div
+              className={`flex items-center bg-white border border-[#DCCFB6] focus-within:border-[#3A2406] rounded-xl overflow-hidden transition ${
+                isModal ? "h-[42px]" : "h-[48px]"
+              }`}
+            >
               <div className="relative h-full shrink-0 border-r border-[#DCCFB6] bg-[#FAF7F0] flex items-center px-2.5">
                 <span className="text-xs sm:text-sm text-[#7A6B56] font-medium pointer-events-none flex items-center gap-1 shrink-0">
                   {formData.countryCode || "+91"}
@@ -176,8 +185,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
           </div>
 
           {/* Check-in & Check-out Field */}
-          <div className="flex flex-col gap-1.5 text-left">
-            <label className="text-[11px] uppercase tracking-[0.16em] text-[#7A6B56] font-medium font-[family-name:var(--font-jost)]">
+          <div className="flex flex-col gap-1 text-left">
+            <label className="text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#7A6B56] font-medium font-[family-name:var(--font-jost)]">
               CHECK-IN & OUT
             </label>
             <div className="relative flex items-center">
@@ -191,7 +200,9 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
                 minDate={minDate}
                 maxDate={maxDate}
                 placeholderText="dd / mm / yyyy"
-                className="w-full bg-white border border-[#DCCFB6] focus:border-[#3A2406] rounded-xl px-3.5 py-2.5 text-sm text-[#3A2406] placeholder:text-[#9C8E7B] focus:outline-none transition h-[48px] pr-9"
+                className={`w-full bg-white border border-[#DCCFB6] focus:border-[#3A2406] rounded-xl text-sm text-[#3A2406] placeholder:text-[#9C8E7B] focus:outline-none transition pr-9 ${
+                  isModal ? "h-[42px] px-3 py-2" : "h-[48px] px-3.5 py-2.5"
+                }`}
                 dateFormat="dd/MM/yyyy"
               />
               <FiCalendar className="absolute right-3 top-1/2 -translate-y-1/2 text-[#9C8E7B] pointer-events-none text-base" />
@@ -204,8 +215,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
           </div>
 
           {/* Guests Field */}
-          <div className="flex flex-col gap-1.5 text-left">
-            <label className="text-[11px] uppercase tracking-[0.16em] text-[#7A6B56] font-medium font-[family-name:var(--font-jost)]">
+          <div className="flex flex-col gap-1 text-left">
+            <label className="text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#7A6B56] font-medium font-[family-name:var(--font-jost)]">
               GUESTS
             </label>
             <div className="relative">
@@ -213,7 +224,9 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
                 name="guests"
                 value={formData.guests || "21 - 30"}
                 onChange={handleChange}
-                className="w-full appearance-none bg-white border border-[#DCCFB6] focus:border-[#3A2406] rounded-xl px-3.5 py-2.5 text-sm text-[#9C8E7B] focus:outline-none transition cursor-pointer pr-8 h-[48px]"
+                className={`w-full appearance-none bg-white border border-[#DCCFB6] focus:border-[#3A2406] rounded-xl text-sm text-[#9C8E7B] focus:outline-none transition cursor-pointer pr-8 ${
+                  isModal ? "h-[42px] px-3 py-2" : "h-[48px] px-3.5 py-2.5"
+                }`}
               >
                 {guestOptions.map((opt) => (
                   <option key={opt} value={opt} className="text-[#3A2406]">
@@ -226,8 +239,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
           </div>
 
           {/* Occasion Field */}
-          <div className="flex flex-col gap-1.5 text-left">
-            <label className="text-[11px] uppercase tracking-[0.16em] text-[#7A6B56] font-medium font-[family-name:var(--font-jost)]">
+          <div className="flex flex-col gap-1 text-left">
+            <label className="text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#7A6B56] font-medium font-[family-name:var(--font-jost)]">
               OCCASION
             </label>
             <div className="relative">
@@ -235,7 +248,9 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
                 name="occasion"
                 value={formData.occasion || "Weekend getaway"}
                 onChange={handleChange}
-                className="w-full appearance-none bg-white border border-[#DCCFB6] focus:border-[#3A2406] rounded-xl px-3.5 py-2.5 text-sm text-[#9C8E7B] focus:outline-none transition cursor-pointer pr-8 h-[48px]"
+                className={`w-full appearance-none bg-white border border-[#DCCFB6] focus:border-[#3A2406] rounded-xl text-sm text-[#9C8E7B] focus:outline-none transition cursor-pointer pr-8 ${
+                  isModal ? "h-[42px] px-3 py-2" : "h-[48px] px-3.5 py-2.5"
+                }`}
               >
                 {occasionOptions.map((opt) => (
                   <option key={opt} value={opt} className="text-[#3A2406]">
@@ -248,8 +263,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
           </div>
 
           {/* Farmhouse Selection */}
-          <div className="flex flex-col gap-1.5 text-left">
-            <label className="text-[11px] uppercase tracking-[0.16em] text-[#7A6B56] font-medium font-[family-name:var(--font-jost)]">
+          <div className="flex flex-col gap-1 text-left">
+            <label className="text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#7A6B56] font-medium font-[family-name:var(--font-jost)]">
               FARMHOUSE
             </label>
             <div className="relative">
@@ -257,7 +272,9 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
                 name="farmhouse"
                 value={formData.farmhouse || "Help me choose"}
                 onChange={handleChange}
-                className="w-full appearance-none bg-white border border-[#DCCFB6] focus:border-[#3A2406] rounded-xl px-3.5 py-2.5 text-sm text-[#9C8E7B] focus:outline-none transition cursor-pointer pr-8 h-[48px]"
+                className={`w-full appearance-none bg-white border border-[#DCCFB6] focus:border-[#3A2406] rounded-xl text-sm text-[#9C8E7B] focus:outline-none transition cursor-pointer pr-8 ${
+                  isModal ? "h-[42px] px-3 py-2" : "h-[48px] px-3.5 py-2.5"
+                }`}
               >
                 {farmhouseOptions.map((opt) => (
                   <option key={opt} value={opt} className="text-[#3A2406]">
@@ -270,11 +287,17 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
           </div>
 
           {/* Submit Action */}
-          <div className="flex flex-col gap-1.5 text-left">
+          <div
+            className={`flex flex-col gap-1 text-left ${
+              isModal ? "sm:col-span-2 mt-1" : ""
+            }`}
+          >
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-[#3A2406] hover:opacity-95 text-[#FFFDF6] rounded-full px-5 py-2.5 text-sm font-medium transition flex items-center justify-center gap-2 shrink-0 disabled:opacity-50 cursor-pointer shadow-md hover:shadow-lg h-[48px]"
+              className={`w-full bg-[#3A2406] hover:opacity-95 text-[#FFFDF6] rounded-full px-5 text-sm font-medium transition flex items-center justify-center gap-2 shrink-0 disabled:opacity-50 cursor-pointer shadow-md hover:shadow-lg ${
+                isModal ? "h-[44px]" : "h-[48px] py-2.5"
+              }`}
             >
               <span>{isSubmitting ? "Sending..." : "Book Now"}</span>
               <span className="text-sm">→</span>
@@ -284,7 +307,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
 
         {/* Disclaimer */}
         <p
-          className="mt-3.5 text-center text-[12px] text-[#8C7E6A] font-normal"
+          className="mt-2.5 text-center text-[11px] text-[#8C7E6A] font-normal"
           style={{ fontFamily: "var(--font-jost), sans-serif" }}
         >
           By submitting, you agree to be contacted by City Focus about your

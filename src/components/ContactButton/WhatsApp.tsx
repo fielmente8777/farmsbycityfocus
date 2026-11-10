@@ -8,11 +8,11 @@ import { FaWhatsapp } from "react-icons/fa";
 function Whatsapp({ whatsAppNumber }: { whatsAppNumber: string }) {
   const pathName = usePathname();
 
-  if (pathName === "/thank-you/") {
+  if (pathName?.startsWith("/thank-you")) {
     return null;
   }
   return (
-    <div className={`fixed bottom-24 lg:left-3 left-4 z-20 cursor-pointer`}>
+    <div className="fixed bottom-6 sm:bottom-8 right-4 lg:right-6 z-20 cursor-pointer">
       <Link
         href={`https://wa.me/${(whatsAppNumber ? whatsAppNumber.replace(/\s+/g, "") : "+91xxxxxxxxxx")}?text=${enCodeText}`}
         target="_blank"

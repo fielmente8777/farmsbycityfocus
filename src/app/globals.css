@@ -9,6 +9,8 @@
   --cream-light: #FFFDF6;
   --secondary: #F6F0E2;
   --dark: #211704;
+  --swiper-theme-color: #8A6A3A;
+  --swiper-pagination-color: #8A6A3A;
 }
 
 @theme inline {
@@ -45,6 +47,12 @@ body {
 .react-datepicker-wrapper {
   width: 100%;
   display: block;
+}
+
+/* Swiper Pagination - Brand Light Brown */
+.swiper-pagination-bullet-active {
+  background: #8A6A3A !important;
+  background-color: #8A6A3A !important;
 }
 
 /* Professional Luxury Fade-Up Animation */

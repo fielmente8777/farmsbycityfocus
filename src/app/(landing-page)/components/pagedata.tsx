@@ -271,6 +271,68 @@ export const farmsData = {
     tag: "GALLERY",
     title: "Take a look around",
     items: [
+      /* ====================================================================
+       * CRYSTAL
+       * ==================================================================== */
+      /* 1. Exterior & Entrance */
+      {
+        id: "c-entrance",
+        title: "Crystal · Entrance",
+        category: "crystal",
+        image: "/crystal/Entrance.webp",
+      },
+
+      /* 2. Lobby & Reception */
+      // {
+      //   id: "c-living",
+      //   title: "Crystal · Living Room",
+      //   category: "crystal",
+      //   image: "/crystal/Living.webp",
+      // },
+      {
+        id: "c-living-2",
+        title: "Crystal · Living Area",
+        category: "crystal",
+        image: "/crystal/living-2.webp",
+      },
+      {
+        id: "c-living-3",
+        title: "Crystal · Lounge",
+        category: "crystal",
+        image: "/crystal/living-3.webp",
+      },
+      {
+        id: "c-dining",
+        title: "Crystal · Dining",
+        category: "crystal",
+        image: "/crystal/dining.webp",
+      },
+      {
+        id: "c-kitchen",
+        title: "Crystal · Kitchen",
+        category: "crystal",
+        image: "/crystal/kitchen.webp",
+      },
+      {
+        id: "c-interior",
+        title: "Crystal · Interior",
+        category: "crystal",
+        image: "/crystal/Interior.webp",
+      },
+      {
+        id: "7",
+        title: "Crystal · Cabana",
+        category: "crystal",
+        image: "/images/farms/gal-crystal-cabana.jpg",
+      },
+      // {
+      //   id: "3",
+      //   title: "Crystal · Bonfire",
+      //   category: "crystal",
+      //   image: "/images/farms/gal-crystal-bonfire.jpg",
+      // },
+
+      /* 3. Swimming Pool */
       {
         id: "1",
         title: "Crystal · Pool",
@@ -278,16 +340,127 @@ export const farmsData = {
         image: "/images/farms/gal-crystal-pool.jpg",
       },
       {
-        id: "2",
-        title: "Sukoon · Pool",
-        category: "sukoon",
-        image: "/images/farms/gal-sukoon-pool.jpg",
+        id: "c-pool",
+        title: "Crystal · Poolside",
+        category: "crystal",
+        image: "/crystal/pool.webp",
+      },
+
+      /* 4. Garden & 5. Lawn */
+      {
+        id: "c-lawn",
+        title: "Crystal · Lawn",
+        category: "crystal",
+        image: "/crystal/Lawn.webp",
+      },
+
+      /* 6. Rooms */
+      // {
+      //   id: "c-room",
+      //   title: "Crystal · Bedroom",
+      //   category: "crystal",
+      //   image: "/crystal/room.webp",
+      // },
+      {
+        id: "c-room-2",
+        title: "Crystal · Master Bedroom",
+        category: "crystal",
+        image: "/crystal/room-2.webp",
+      },
+      // {
+      //   id: "c-room-3",
+      //   title: "Crystal · Bedroom Suite",
+      //   category: "crystal",
+      //   image: "/crystal/room-3.webp",
+      // },
+      {
+        id: "c-room-4",
+        title: "Crystal · Guest Room",
+        category: "crystal",
+        image: "/crystal/room-4.webp",
       },
       {
-        id: "3",
-        title: "Crystal · Bonfire",
+        id: "c-room-5",
+        title: "Crystal · Deluxe Bedroom",
         category: "crystal",
-        image: "/images/farms/gal-crystal-bonfire.jpg",
+        image: "/crystal/room-5.webp",
+      },
+      // {
+      //   id: "c-room-6",
+      //   title: "Crystal · Premium Bedroom",
+      //   category: "crystal",
+      //   image: "/crystal/room-6.webp",
+      // },
+      {
+        id: "c-interior-2",
+        title: "Crystal · Room TV Lounge",
+        category: "crystal",
+        image: "/crystal/interior-2.webp",
+      },
+
+      /* 7. Balcony / Room View */
+      {
+        id: "c-room-7",
+        title: "Crystal · Bedroom View",
+        category: "crystal",
+        image: "/crystal/room-7.webp",
+      },
+
+      /* 8. Bathroom */
+      {
+        id: "c-bathroom",
+        title: "Crystal · Bathroom",
+        category: "crystal",
+        image: "/crystal/bathroom.webp",
+      },
+      {
+        id: "c-washroom",
+        title: "Crystal · Washroom",
+        category: "crystal",
+        image: "/crystal/Washroom.webp",
+      },
+
+      /* ====================================================================
+       * SUKOON
+       * ==================================================================== */
+      /* 1. Exterior & Entrance */
+      {
+        id: "s-entrance",
+        title: "Sukoon · Entrance",
+        category: "sukoon",
+        image: "/sukoon/entrance.webp",
+      },
+
+      /* 2. Lobby & Reception */
+      // {
+      //   id: "6",
+      //   title: "Sukoon · Living",
+      //   category: "sukoon",
+      //   image: "/images/farms/gal-sukoon-living.jpg",
+      // },
+      {
+        id: "s-living",
+        title: "Sukoon · Living Area",
+        category: "sukoon",
+        image: "/sukoon/living.webp",
+      },
+      {
+        id: "s-sitting",
+        title: "Sukoon · Sitting Area",
+        category: "sukoon",
+        image: "/sukoon/sitting-area.webp",
+      },
+      {
+        id: "s-corridor",
+        title: "Sukoon · Corridor",
+        category: "sukoon",
+        image: "/sukoon/corridor.webp",
+      },
+      {
+        id: "s-kitchen",
+        title: "Sukoon · Kitchen",
+        category: "sukoon",
+        image: "/sukoon/kitchen.webp",
       },
       {
         id: "4",
@@ -295,23 +468,95 @@ export const farmsData = {
         category: "sukoon",
         image: "/images/farms/gal-sukoon-gazebo.jpg",
       },
+
+      /* 3. Swimming Pool */
+      // {
+      //   id: "2",
+      //   title: "Sukoon · Pool",
+      //   category: "sukoon",
+      //   image: "/images/farms/gal-sukoon-pool.jpg",
+      // },
+      {
+        id: "s-pool",
+        title: "Sukoon · Poolside",
+        category: "sukoon",
+        image: "/sukoon/pool.webp",
+      },
+
+      /* 4. Garden */
+      {
+        id: "s-garden-view",
+        title: "Sukoon · Garden View",
+        category: "sukoon",
+        image: "/sukoon/garden-view.webp",
+      },
       {
         id: "5",
-        title: "Sukoon · Games",
+        title: "Sukoon · Games Area",
         category: "sukoon",
         image: "/images/farms/gal-sukoon-games.jpg",
       },
+
+      /* 5. Lawn */
       {
-        id: "6",
-        title: "Sukoon · Living",
+        id: "s-lawn",
+        title: "Sukoon · Lawn",
         category: "sukoon",
-        image: "/images/farms/gal-sukoon-living.jpg",
+        image: "/sukoon/lawn.webp",
+      },
+
+      /* 6. Rooms */
+      {
+        id: "s-room",
+        title: "Sukoon · Bedroom",
+        category: "sukoon",
+        image: "/sukoon/room.webp",
       },
       {
-        id: "7",
-        title: "Crystal · Cabana",
-        category: "crystal",
-        image: "/images/farms/gal-crystal-cabana.jpg",
+        id: "s-room-2",
+        title: "Sukoon · Master Bedroom",
+        category: "sukoon",
+        image: "/sukoon/room-2.webp",
+      },
+      {
+        id: "s-room-3",
+        title: "Sukoon · Bedroom Suite",
+        category: "sukoon",
+        image: "/sukoon/room-3.webp",
+      },
+      {
+        id: "s-room-4",
+        title: "Sukoon · Guest Room",
+        category: "sukoon",
+        image: "/sukoon/room-4.webp",
+      },
+      {
+        id: "s-room-5",
+        title: "Sukoon · Deluxe Bedroom",
+        category: "sukoon",
+        image: "/sukoon/room-5.webp",
+      },
+
+      /* 7. Balcony / Room View */
+      {
+        id: "s-view",
+        title: "Sukoon · Balcony View",
+        category: "sukoon",
+        image: "/sukoon/view.webp",
+      },
+
+      /* 8. Bathroom */
+      {
+        id: "s-bathroom",
+        title: "Sukoon · Bathroom",
+        category: "sukoon",
+        image: "/sukoon/bathroom.webp",
+      },
+      {
+        id: "s-washroom",
+        title: "Sukoon · Washroom",
+        category: "sukoon",
+        image: "/sukoon/washroom.webp",
       },
     ] as GalleryItem[],
   },
@@ -437,4 +682,6 @@ export const farmsData = {
     bgImage: "/images/farms/cta-bg.jpg",
   },
 };
+
+export const pageData = farmsData;
 

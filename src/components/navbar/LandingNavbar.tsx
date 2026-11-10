@@ -12,18 +12,13 @@ const LandingNavbar = () => {
   const pathName = usePathname();
   const { setIsOpenFormPopUp } = useWebContext();
 
-  if (pathName === "/thank-you/") {
+  if (pathName?.startsWith("/thank-you")) {
     return null;
   }
 
   const handleBookNow = (e: React.MouseEvent) => {
-    const formElem = document.getElementById("booking-form");
-    if (formElem) {
-      e.preventDefault();
-      formElem.scrollIntoView({ behavior: "smooth" });
-    } else {
-      setIsOpenFormPopUp(true);
-    }
+    e.preventDefault();
+    setIsOpenFormPopUp(true);
   };
 
   return (

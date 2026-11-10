@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { farmsData } from "./farmsData";
-import BookingForm from "./BookingForm";
+import { farmsData } from "./pagedata";
+import BookingForm from "@/src/components/forms/BookingForm";
 import { Container, SectionWithContainer } from "@/src/components/sectionComponants";
 import { guestIcon, poolIcon, bonfireIcon, kitchenIcon } from "@/src/utils/icon";
 
