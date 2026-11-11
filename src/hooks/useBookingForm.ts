@@ -51,9 +51,9 @@ const initialFormData: BookingFormData = {
   checkOut: "",
   message: "",
   city: "",
-  guests: "21 - 30",
+  guests: "10 - 12",
   occasion: "Weekend getaway",
-  farmhouse: "Help me choose",
+  farmhouse: "Sukoon Farmhouse (3 BHK)",
 };
 
 const useBookingForm = ({
@@ -171,10 +171,28 @@ const useBookingForm = ({
     >,
   ) => {
     const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
+    setFormData((prevFormData) => {
+      const updated = {
+        ...prevFormData,
+        [name]: value,
+      };
+
+      if (name === "guests") {
+        if (value === "10 - 12") {
+          updated.farmhouse = "Sukoon Farmhouse (3 BHK)";
+        } else if (value === "12 - 15") {
+          updated.farmhouse = "Crystal Farmhouse (4 BHK)";
+        }
+      } else if (name === "farmhouse") {
+        if (value === "Sukoon Farmhouse (3 BHK)") {
+          updated.guests = "10 - 12";
+        } else if (value === "Crystal Farmhouse (4 BHK)") {
+          updated.guests = "12 - 15";
+        }
+      }
+
+      return updated;
+    });
     // Clear error for this field
     if (errors[name as keyof FormErrors]) {
       setErrors((prevErrors) => ({
@@ -185,10 +203,28 @@ const useBookingForm = ({
   };
 
   const setFieldValue = (field: keyof BookingFormData, value: string) => {
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [field]: value,
-    }));
+    setFormData((prevFormData) => {
+      const updated = {
+        ...prevFormData,
+        [field]: value,
+      };
+
+      if (field === "guests") {
+        if (value === "10 - 12") {
+          updated.farmhouse = "Sukoon Farmhouse (3 BHK)";
+        } else if (value === "12 - 15") {
+          updated.farmhouse = "Crystal Farmhouse (4 BHK)";
+        }
+      } else if (field === "farmhouse") {
+        if (value === "Sukoon Farmhouse (3 BHK)") {
+          updated.guests = "10 - 12";
+        } else if (value === "Crystal Farmhouse (4 BHK)") {
+          updated.guests = "12 - 15";
+        }
+      }
+
+      return updated;
+    });
 
     if (errors[field as keyof FormErrors]) {
       setErrors((prevErrors) => ({

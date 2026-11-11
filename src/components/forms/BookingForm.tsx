@@ -15,23 +15,21 @@ interface BookingFormProps {
 }
 
 const guestOptions = [
-  "10 - 20",
-  "21 - 30",
-  "30+ guests",
+  "10 - 12",
+  "12 - 15",
 ];
 
 const occasionOptions = [
-  "Weekend getaway",
-  "Birthdays & celebrations",
-  "Family gatherings",
-  "Friends' get-togethers",
-  "Corporate offsites",
-  "Couple escapes",
+  "Weekend Getaway",
+  "Birthdays Party",
+  "Family Gatherings",
+  // "Friends' get-togethers",
+  "Corporate Events",
+  "Couple Escapes",
   "Other",
 ];
 
 const farmhouseOptions = [
-  "Help me choose",
   "Crystal Farmhouse (4 BHK)",
   "Sukoon Farmhouse (3 BHK)",
 ];
@@ -115,7 +113,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
           className={`grid ${
             isModal
               ? "grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 items-end"
-              : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.1fr_1.3fr_1.25fr_0.9fr_1.35fr_1.35fr_1.15fr] gap-3 sm:gap-3.5 items-end"
+              : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.05fr_1.25fr_1.2fr_0.85fr_1.2fr_1.42fr_1.1fr] gap-2.5 sm:gap-3 xl:gap-3.5 items-end"
           }`}
         >
           {/* Name Field */}
@@ -149,8 +147,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
                 isModal ? "h-[42px]" : "h-[48px]"
               }`}
             >
-              <div className="relative h-full shrink-0 border-r border-[#DCCFB6] bg-[#FAF7F0] flex items-center px-2.5">
-                <span className="text-xs sm:text-sm text-[#7A6B56] font-medium pointer-events-none flex items-center gap-1 shrink-0">
+              <div className="relative h-full shrink-0 border-r border-[#DCCFB6] bg-transparent flex items-center px-2.5">
+                <span className="text-xs sm:text-sm text-[#9C8E7B] font-medium pointer-events-none flex items-center gap-1 shrink-0">
                   {formData.countryCode || "+91"}
                   <IoIosArrowDown className="text-[#9C8E7B] text-[10px]" />
                 </span>
@@ -222,9 +220,9 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
             <div className="relative">
               <select
                 name="guests"
-                value={formData.guests || "21 - 30"}
+                value={formData.guests || "10 - 12"}
                 onChange={handleChange}
-                className={`w-full appearance-none bg-white border border-[#DCCFB6] focus:border-[#3A2406] rounded-xl text-sm text-[#9C8E7B] focus:outline-none transition cursor-pointer pr-8 ${
+                className={`w-full appearance-none bg-white border border-[#DCCFB6] focus:border-[#3A2406] rounded-xl text-sm text-[#9C8E7B] focus:outline-none transition cursor-pointer pr-6 ${
                   isModal ? "h-[42px] px-3 py-2" : "h-[48px] px-3.5 py-2.5"
                 }`}
               >
@@ -234,7 +232,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
                   </option>
                 ))}
               </select>
-              <IoIosArrowDown className="absolute right-3 top-1/2 -translate-y-1/2 text-[#9C8E7B] pointer-events-none text-sm" />
+              <IoIosArrowDown className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#9C8E7B] pointer-events-none text-sm" />
             </div>
           </div>
 
@@ -248,7 +246,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
                 name="occasion"
                 value={formData.occasion || "Weekend getaway"}
                 onChange={handleChange}
-                className={`w-full appearance-none bg-white border border-[#DCCFB6] focus:border-[#3A2406] rounded-xl text-sm text-[#9C8E7B] focus:outline-none transition cursor-pointer pr-8 ${
+                className={`w-full appearance-none bg-white border border-[#DCCFB6] focus:border-[#3A2406] rounded-xl text-sm text-[#9C8E7B] focus:outline-none transition cursor-pointer pr-6 ${
                   isModal ? "h-[42px] px-3 py-2" : "h-[48px] px-3.5 py-2.5"
                 }`}
               >
@@ -258,7 +256,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
                   </option>
                 ))}
               </select>
-              <IoIosArrowDown className="absolute right-3 top-1/2 -translate-y-1/2 text-[#9C8E7B] pointer-events-none text-xs" />
+              <IoIosArrowDown className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#9C8E7B] pointer-events-none text-xs" />
             </div>
           </div>
 
@@ -270,9 +268,9 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
             <div className="relative">
               <select
                 name="farmhouse"
-                value={formData.farmhouse || "Help me choose"}
+                value={formData.farmhouse || "Sukoon Farmhouse (3 BHK)"}
                 onChange={handleChange}
-                className={`w-full appearance-none bg-white border border-[#DCCFB6] focus:border-[#3A2406] rounded-xl text-sm text-[#9C8E7B] focus:outline-none transition cursor-pointer pr-8 ${
+                className={`w-full appearance-none bg-white border border-[#DCCFB6] focus:border-[#3A2406] rounded-xl text-sm text-[#9C8E7B] focus:outline-none transition cursor-pointer pr-6 ${
                   isModal ? "h-[42px] px-3 py-2" : "h-[48px] px-3.5 py-2.5"
                 }`}
               >
@@ -282,7 +280,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ isModal = false }) => {
                   </option>
                 ))}
               </select>
-              <IoIosArrowDown className="absolute right-3 top-1/2 -translate-y-1/2 text-[#9C8E7B] pointer-events-none text-xs" />
+              <IoIosArrowDown className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#9C8E7B] pointer-events-none text-xs" />
             </div>
           </div>
 

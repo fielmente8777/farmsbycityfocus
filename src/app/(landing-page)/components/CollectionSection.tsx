@@ -147,21 +147,26 @@ const FarmhouseCardItem = ({ card }: { card: FarmhouseCard }) => {
           <div className="border-t border-[#EBD9B4]/50 my-4" />
           <div className="flex flex-row items-center justify-between gap-2">
             {/* Price */}
-            <div className="flex items-center gap-1 sm:gap-2">
-              <span className="text-[11px] sm:text-sm text-[#7A6B56] font-normal font-[family-name:var(--font-jost)] shrink-0">
-                From
-              </span>
-              <span
-                className="bg-[#EEDEC5] text-[#3A2406] px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-lg text-[18px] sm:text-[26px] font-medium leading-[120%] tracking-normal border border-[#E0CFB5] inline-flex items-center whitespace-nowrap"
-                style={{
-                  fontFamily: "var(--font-playfair), serif",
-                  fontWeight: 500,
-                }}
-              >
-                {card.price}
-              </span>
-              <span className="text-[11px] sm:text-sm text-[#7A6B56] font-normal font-[family-name:var(--font-jost)] shrink-0 whitespace-nowrap">
-                / night
+            <div className="flex flex-col">
+              <div className="flex items-center gap-1 sm:gap-2">
+                <span className="text-[11px] sm:text-sm text-[#7A6B56] font-normal font-[family-name:var(--font-jost)] shrink-0">
+                  From
+                </span>
+                <span
+                  className="bg-[#EEDEC5] text-[#3A2406] px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-lg text-[18px] sm:text-[26px] font-medium leading-[120%] tracking-normal border border-[#E0CFB5] inline-flex items-center whitespace-nowrap"
+                  style={{
+                    fontFamily: "var(--font-playfair), serif",
+                    fontWeight: 500,
+                  }}
+                >
+                  {card.price}
+                </span>
+                <span className="text-[11px] sm:text-sm text-[#7A6B56] font-normal font-[family-name:var(--font-jost)] shrink-0 whitespace-nowrap">
+                  / night
+                </span>
+              </div>
+              <span className="text-[15px] text-[#8C7A63] font-normal font-[family-name:var(--font-jost)] mt-1 tracking-normal">
+                *Rates may vary on weekends
               </span>
             </div>
 

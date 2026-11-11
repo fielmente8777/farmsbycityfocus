@@ -112,7 +112,7 @@ export const farmsData = {
           "Balola, Gurugram · near Heritage International Xperiential School",
         tagline:
           "A glass-fronted retreat with poolside cabanas, barbecue evenings and bonfire nights.",
-        pills: ["4 BHK", "25+ guests", "Private pool", "Spacious lawn"],
+        pills: ["4 BHK", "12-15 guests", "Private pool", "Spacious lawn"],
         features: [
           "Poolside cabana lounge",
           "Bonfire seating",
@@ -121,7 +121,7 @@ export const farmsData = {
         ],
         bestFor:
           "weekend getaways, private celebrations and group gatherings.",
-        price: "₹ xxxx",
+        price: "₹ 32,000",
         mainImage: "/images/farms/crystal-main.jpg",
         thumbs: [
           "/images/farms/crystal-thumb-1.jpg",
@@ -136,7 +136,7 @@ export const farmsData = {
         location: "Vatika Complex, Karanki Road, Sohna · Gurugram",
         tagline:
           "Wide lawns, a red-brick gazebo, a games lounge and a pool that glows at dusk.",
-        pills: ["3 BHK", "25+ guests", "Private pool", "Large lawn"],
+        pills: ["3 BHK", "10-12 guests", "Private pool", "Large lawn"],
         features: [
           "Gazebo with swing seating",
           "Pool table & outdoor games",
@@ -145,7 +145,7 @@ export const farmsData = {
         ],
         bestFor:
           "family outings, group getaways and intimate celebrations.",
-        price: "₹ xxxx",
+        price: "₹ 28,000",
         mainImage: "/images/farms/sukoon-main.jpg",
         thumbs: [
           "/images/farms/sukoon-thumb-1.jpg",
