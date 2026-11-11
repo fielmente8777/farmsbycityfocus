@@ -69,9 +69,8 @@ const OccasionsSection = () => {
           textAlign: "center",
         }}
       >
-        <span>One farmhouse, </span>
-        <span className="italic">endless</span>
-        <span className="block italic">reasons to gather.</span>
+        <span>Farmhouse Stays </span>
+        <span className="italic"> for Every Occasion.</span>
       </h2>
 
       {/* Mobile Slider */}

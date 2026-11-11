@@ -147,27 +147,43 @@ const FarmhouseCardItem = ({ card }: { card: FarmhouseCard }) => {
           <div className="border-t border-[#EBD9B4]/50 my-4" />
           <div className="flex flex-row items-center justify-between gap-2">
             {/* Price */}
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1 sm:gap-2">
-                <span className="text-[11px] sm:text-sm text-[#7A6B56] font-normal font-[family-name:var(--font-jost)] shrink-0">
-                  Starting from
-                </span>
-                <span
-                  className="bg-[#EEDEC5] text-[#3A2406] px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-lg text-[18px] sm:text-[26px] font-medium leading-[120%] tracking-normal border border-[#E0CFB5] inline-flex items-center whitespace-nowrap"
-                  style={{
-                    fontFamily: "var(--font-playfair), serif",
-                    fontWeight: 500,
-                  }}
-                >
-                  {card.price}
-                </span>
-                <span className="text-[11px] sm:text-sm text-[#7A6B56] font-normal font-[family-name:var(--font-jost)] shrink-0 whitespace-nowrap">
-                  / night
-                </span>
+            <div className="flex items-center gap-1 sm:gap-2">
+              {/* <span className="text-[11px] sm:text-sm text-[#7A6B56] font-normal font-[family-name:var(--font-jost)] shrink-0">
+                From
+              </span> */}
+              <div className="bg-[#EEDEC5] text-[#3A2406] px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-[#E0CFB5] inline-flex flex-col justify-center leading-tight">
+                <div className="flex items-baseline gap-1 sm:gap-1.5 whitespace-nowrap">
+                  <span
+                    className="text-[15px] sm:text-[20px] font-medium text-[#3A2406] leading-none tracking-normal"
+                    style={{
+                      fontFamily: "var(--font-jost), serif",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {card.priceWeekday || card.price}
+                  </span>
+                  <span className="text-[10px] sm:text-[12px] text-[#6B5F4C] font-normal font-[family-name:var(--font-jost)]">
+                    / night for weekdays 
+                  </span>
+                </div>
+                <div className="flex items-baseline gap-1 sm:gap-1.5 whitespace-nowrap mt-0.5 sm:mt-1">
+                  <span
+                    className="text-[15px] sm:text-[20px] font-medium text-[#3A2406] leading-none tracking-normal"
+                    style={{
+                      fontFamily: "var(--font-jost), serif",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {card.priceWeekend || card.price}
+                  </span>
+                  <span className="text-[10px] sm:text-[12px] text-[#6B5F4C] font-normal font-[family-name:var(--font-jost)]">
+                    / night for weekends 
+                  </span>
+                </div>
               </div>
-              <span className="text-[15px] text-[#8C7A63] font-normal font-[family-name:var(--font-jost)] mt-1 tracking-normal">
-                *Rates may vary on weekends
-              </span>
+              {/* <span className="text-[11px] sm:text-sm text-[#7A6B56] font-normal font-[family-name:var(--font-jost)] shrink-0 whitespace-nowrap">
+                / night
+              </span> */}
             </div>
 
             {/* Action Buttons */}

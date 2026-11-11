@@ -8,6 +8,8 @@ export interface FarmhouseCard {
   features: string[];
   bestFor: string;
   price: string;
+  priceWeekday?: string;
+  priceWeekend?: string;
   mainImage: string;
   thumbs: string[];
 }
@@ -122,10 +124,12 @@ export const farmsData = {
         bestFor:
           "weekend getaways, private celebrations and group gatherings.",
         price: "₹ 32,000",
-        mainImage: "/images/farms/crystal-main.jpg",
+        priceWeekday: "₹ 32,000",
+        priceWeekend: "₹ 35,000",
+        mainImage: "/images/farms/crystal-thumb-1.jpg",
         thumbs: [
-          "/images/farms/crystal-thumb-1.jpg",
           "/images/farms/crystal-thumb-2.jpg",
+          "/images/farms/crystal-main.jpg",
           "/images/farms/crystal-thumb-3.jpg",
         ],
       },
@@ -146,10 +150,12 @@ export const farmsData = {
         bestFor:
           "family outings, group getaways and intimate celebrations.",
         price: "₹ 28,000",
-        mainImage: "/images/farms/sukoon-main.jpg",
+        priceWeekday: "₹ 28,000",
+        priceWeekend: "₹ 32,000",
+        mainImage: "/images/farms/sukoon-thumb-1.jpg",
         thumbs: [
-          "/images/farms/sukoon-thumb-1.jpg",
           "/images/farms/sukoon-thumb-2.jpg",
+          "/images/farms/sukoon-main.jpg",
           "/images/farms/sukoon-thumb-3.jpg",
         ],
       },
@@ -158,8 +164,8 @@ export const farmsData = {
 
   occasions: {
     tag: "MADE FOR THE MOMENTS THAT MATTER",
-    titleMain: "One farmhouse,",
-    titleItalic: "endless reasons to gather.",
+    titleMain: "Farmhouse Stays",
+    titleItalic: "for Every Occasion.",
     items: [
       {
         id: "weekend",
