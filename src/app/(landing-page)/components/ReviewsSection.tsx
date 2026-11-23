@@ -81,26 +81,30 @@ const ReviewsSection = () => {
         </div>
       </div>
 
-      {/* Reviews Slider (Mobile) */}
-      <div className="block md:hidden">
+      {/* Reviews Slider: 1 card on mobile, 2 on tablet, 3 on desktop */}
+      <div>
         <Swiper
           modules={[Autoplay, Pagination]}
           autoplay={{
             delay: 3500,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
-          loop={true}
+          loop={reviews.items.length > 3}
           slidesPerView={1}
           spaceBetween={20}
-          centeredSlides={true}
+          breakpoints={{
+            768: { slidesPerView: 2, spaceBetween: 24 },
+            1024: { slidesPerView: 3, spaceBetween: 24 },
+          }}
           pagination={{
             clickable: true,
           }}
-          className="!pb-10"
+          className="!pb-12"
         >
           {reviews.items.map((rev) => (
-            <SwiperSlide key={rev.id} className="h-auto">
-              <div className="bg-white p-6 rounded-2xl border border-[#E8DEC8] shadow-[0_2px_12px_rgba(58,36,6,0.03)] flex flex-col justify-between h-full min-h-[260px] text-left">
+            <SwiperSlide key={rev.id} className="!h-auto">
+              <div className="bg-white p-6 sm:p-8 rounded-2xl border border-[#E8DEC8] shadow-[0_2px_12px_rgba(58,36,6,0.03)] flex flex-col justify-between h-full min-h-[260px] text-left hover:shadow-md transition duration-300">
                 <div>
                   {/* 5 STARS (WARM GOLD) */}
                   <div className="flex items-center gap-1.5 text-[#C6A87D] text-[15px] tracking-[0.2em] mb-4">
@@ -149,61 +153,6 @@ const ReviewsSection = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
-
-      {/* Review Cards (Desktop) */}
-      <div className="hidden md:grid md:grid-cols-3 gap-5 sm:gap-6 items-start">
-        {reviews.items.map((rev) => (
-          <div
-            key={rev.id}
-            className="bg-white p-7 sm:p-8 rounded-2xl border border-[#E8DEC8] shadow-[0_2px_12px_rgba(58,36,6,0.03)] flex flex-col hover:shadow-md transition duration-300"
-          >
-            <div>
-              {/* Star Rating */}
-              <div className="flex items-center gap-1.5 text-[#C6A87D] text-[15px] tracking-[0.2em] mb-5">
-                {"★".repeat(rev.rating)}
-              </div>
-
-              {/* Quote */}
-              <p
-                className="text-lg sm:text-[21px] text-[#3A2406] leading-[140%] font-normal"
-                style={{
-                  fontFamily: "'Playfair Display', var(--font-playfair), serif",
-                  fontWeight: 400,
-                }}
-              >
-                {rev.quote}
-              </p>
-            </div>
-
-            {/* Author */}
-            <div className="mt-8 flex items-center gap-3.5">
-              <div
-                className="w-10 h-10 rounded-full bg-[#211704] text-[#FFFDF6] flex items-center justify-center font-medium text-sm shrink-0"
-                style={{ fontFamily: "var(--font-jost), sans-serif" }}
-              >
-                {rev.author.charAt(0)}
-              </div>
-              <div>
-                <h4
-                  className="text-[15px] font-medium text-[#3A2406] leading-tight"
-                  style={{
-                    fontFamily: "var(--font-jost), sans-serif",
-                    fontWeight: 500,
-                  }}
-                >
-                  {rev.author}
-                </h4>
-                <span
-                  className="text-[13px] text-[#7A6B56] font-normal leading-tight block mt-0.5"
-                  style={{ fontFamily: "var(--font-jost), sans-serif" }}
-                >
-                  {rev.property}
-                </span>
-              </div>
-            </div>
-          </div>
-        ))}
       </div>
 
       {/* Actions (Mobile) */}

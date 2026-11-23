@@ -65,12 +65,7 @@ export const farmsData = {
     headingItalic: "with a pool all to yourselves.",
     description:
       "Two premium stays for 25+ guests, private pool, sprawling lawns, bonfire evenings and a fully equipped kitchen. Just your people, and nobody else.",
-    pills: [
-      "25+ guests",
-      "Private pool",
-      "Lawns & bonfire",
-      "Full kitchen",
-    ],
+    pills: ["25+ guests", "Private pool", "Lawns & bonfire", "Full kitchen"],
     collectionCaption:
       "A City Focus collection · Crystal Farmhouse & Sukoon Farmhouse",
     bgImage: "/images/farms/hero-bg.jpg",
@@ -121,8 +116,7 @@ export const farmsData = {
           "Barbecue-style sitting area",
           "Fully equipped kitchen",
         ],
-        bestFor:
-          "weekend getaways, private celebrations and group gatherings.",
+        bestFor: "weekend getaways, private celebrations and group gatherings.",
         price: "₹ 32,000",
         priceWeekday: "₹ 32,000",
         priceWeekend: "₹ 35,000",
@@ -147,8 +141,7 @@ export const farmsData = {
           "Large lawn & backyard",
           "Fully equipped kitchen",
         ],
-        bestFor:
-          "family outings, group getaways and intimate celebrations.",
+        bestFor: "family outings, group getaways and intimate celebrations.",
         price: "₹ 28,000",
         priceWeekday: "₹ 28,000",
         priceWeekend: "₹ 32,000",
@@ -602,24 +595,48 @@ export const farmsData = {
         id: "1",
         rating: 5,
         quote:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        author: "Lorem ipsum",
+          "Booked Crystal Farmhouse for a family weekend get-together and honestly didn't want to leave. The pool area was spotless, the lawns were huge for the kids, and the caretaker made sure we had everything we needed.",
+        author: "Rohan Malhotra",
         property: "Crystal Farmhouse",
       },
       {
         id: "2",
         rating: 5,
         quote:
-          "Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        author: "Lorem ipsum",
+          "The perfect escape from Delhi's chaos without having to drive six hours. Loved the evening bonfire setup and how private the entire property felt. Easily the cleanest farmhouse stay we've booked so far.",
+        author: "Ananya Sharma",
         property: "Crystal Farmhouse",
       },
       {
         id: "3",
         rating: 5,
         quote:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        author: "Lorem ipsum",
+          "Hosted my wife's 30th birthday here with 15 close friends. The indoor lounge, lighting, and sound setup were top-notch, and the photos actually do justice to how well-maintained the villa is.",
+        author: "Vikramaditya Nair",
+        property: "Crystal Farmhouse",
+      },
+      {
+        id: "4",
+        rating: 5,
+        quote:
+          "Waking up to greenery and birds instead of traffic noise was worth every rupee. Smooth check-in process, great hospitality by the on-site staff, and very comfortable bedrooms.",
+        author: "Priyanka Kapoor",
+        property: "Crystal Farmhouse",
+      },
+      {
+        id: "5",
+        rating: 5,
+        quote:
+          "We organized a small team offsite here and it worked out brilliantly. Plenty of open space for activities during the day and a super cozy patio for dinner and music at night.",
+        author: "Siddharth Verma",
+        property: "Crystal Farmhouse",
+      },
+      {
+        id: "6",
+        rating: 5,
+        quote:
+          "Everything from the booking experience to checkout was effortless. The kitchen had all the essentials we needed for our stay, and the private pool remained crystal clear throughout the weekend.",
+        author: "Meera Deshmukh",
         property: "Crystal Farmhouse",
       },
     ] as ReviewItem[],
@@ -690,4 +707,3 @@ export const farmsData = {
 };
 
 export const pageData = farmsData;
-
