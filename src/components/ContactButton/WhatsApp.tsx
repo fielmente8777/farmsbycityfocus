@@ -12,7 +12,7 @@ function Whatsapp({ whatsAppNumber }: { whatsAppNumber: string }) {
     return null;
   }
   return (
-    <div className="fixed bottom-6 sm:bottom-8 right-4 lg:right-6 z-20 cursor-pointer">
+    <div className="fixed bottom-[88px] sm:bottom-24 left-4 lg:left-6 z-20 cursor-pointer">
       <Link
         href={`https://wa.me/${(whatsAppNumber ? whatsAppNumber.replace(/\s+/g, "") : "+91xxxxxxxxxx")}?text=${enCodeText}`}
         target="_blank"
