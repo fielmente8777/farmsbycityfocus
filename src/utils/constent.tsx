@@ -7,10 +7,10 @@ Please share the availability and best rates.
 Thank you!`);
 
 export const contact = {
-  email: "xxx@demoemail.com",
+  email: "farmsbycityfocus0@gmail.com",
   mapUrl: "",
-  phone: ["+91 xxxxx xxxxx"],
-  displayPhone: "+91 xxxxx xxxxx",
+  phone: ["+91 89207 65734"],
+  displayPhone: "+91 89207 65734",
   crystalAddress:
     "Crystal Farm, near Heritage International Xperiential School, Balola, Gurugram, Haryana 122011",
   sukoonAddress:
@@ -22,8 +22,8 @@ export const contact = {
     facebook: "https://www.facebook.com",
     instagram: "https://www.instagram.com/",
   },
-  callCta: `tel:+91xxxxxxxxxx`,
-  WhatsappCta: `https://wa.me/+91xxxxxxxxxx?text=${enCodeText}`,
+  callCta: `tel:+918920765734`,
+  WhatsappCta: `https://wa.me/+918920765734?text=${enCodeText}`,
   formDomain: "farmsbycityfocus",
   formHid: "",
 };
